@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Travels Pondicherry | Premium City Transfer</title>
+    <meta name="description"
+        content="Book a premium, reliable, and comfortable ride in the city. Professional driver, immaculate car, instantly available.">
+    <!-- Google Fonts: Outfit for a modern, sleek look -->
+    <link rel="icon" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.jpg" alt="Time Travels Logo" class="nav-logo-img">
+                TIME TRAVELS PONDICHERRY
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">The Car</a>
+                <a href="#fare">Service</a>
+                <a href="#payment">Payment</a>
+                <a href="#book" class="btn-primary-small">Book Now</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="status-badge">
+                <span class="pulse"></span>
+            </div>
+            <h1>Your Premium Ride,<br><span>With Time Travels<br> Pondicherry.</span></h1>
+            <p>"Travel in style, arrive in comfort."</p>
+            <div class="hero-actions">
+                <a href="#book" class="btn-primary">Book Your Ride <i class="fas fa-arrow-right"></i></a>
+                <a href="https://wa.me/916369637671?text=Hi,%20I%20would%20like%20to%20book%20a%20ride." target="_blank"
+                    class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Quick WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / The Car Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Your Driver <span>&</span> Vehicle</h2>
+                <p>Top-tier service guaranteed for every journey.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="car-image-card glass-card">
+                    <!-- Placeholder image representing the car -->
+                    <img src="cars.jpeg" alt="Premium Black Sedan">
+                    <div class="car-details">
+                        <h3>Toyota Glanza</h3>
+                        <p>Executive Sedan</p>
+                    </div>
+                </div>
+
+                <div class="driver-info">
+                    <div class="driver-header">
+                        <img src="owner.jpeg" alt="Driver Profile" class="driver-avatar">
+                        <div>
+                            <h3>EZHUMALAI V</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="icon-box"><i class="fas fa-wifi"></i></div>
+                            <div>
+                                <h4>Free On-board Wi-Fi</h4>
+                                <p>Stay connected during your ride.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon-box"><i class="fas fa-tint"></i></div>
+                            <div>
+                                <h4>Immaculately Clean</h4>
+                                <p>Sanitized before every passenger.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon-box"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Always Punctual</h4>
+                                <p>Guaranteed on-time pickups, every time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Fleet & Pricing -->
+    <section id="fare" class="fleet-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Premium <span>Services</span></h2>
+                <p>Choose the perfect vehicle for your journey. Transparent pricing per kilometer.</p>
+            </div>
+
+            <div class="fleet-grid">
+                <!-- Sedan Card -->
+                <div class="fleet-card glass-card">
+                    <div class="fleet-img-wrapper">
+                        <img src="car.jpg" alt="Premium Sedan">
+                        <div class="fleet-badge">₹14 / km</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Premium Sedan</h3>
+                        <p><i class="fas fa-user"></i> 4+1 Seats &nbsp;|&nbsp; <i class="fas fa-snowflake"></i> AC</p>
+
+                        <div class="calc-form">
+                            <div class="input-group">
+                                <label>Distance (14/km)</label>
+                                <input type="number" id="distance-sedan" placeholder="Enter Kilometer" min="1">
+                            </div>
+                            <button class="btn-secondary btn-small calc-btn" data-vehicle="sedan"
+                                data-rate="14">Calculate Fare</button>
+                            <div id="result-sedan" class="result-box hidden">
+                                <h4>Est. Fare: <span class="fare-amount"
+                                        style="font-size: 2rem; color: var(--primary-color);">₹0</span></h4>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-primary full-width mt-1" onclick="selectVehicle('Sedan')">Book
+                            Sedan</a>
+                    </div>
+                </div>
+
+                <!-- SUV Card -->
+                <div class="fleet-card glass-card">
+                    <div class="fleet-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=800"
+                            alt="Premium SUV">
+                        <div class="fleet-badge">₹19 / km</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Luxury SUV</h3>
+                        <p><i class="fas fa-users"></i> 7+1 Seats &nbsp;|&nbsp; <i class="fas fa-snowflake"></i> AC</p>
+
+                        <div class="calc-form">
+                            <div class="input-group">
+                                <label>Distance (19/km)</label>
+                                <input type="number" id="distance-suv" placeholder="Enter Kilometer" min="1">
+                            </div>
+                            <button class="btn-secondary btn-small calc-btn" data-vehicle="suv" data-rate="19">Calculate
+                                Fare</button>
+                            <div id="result-suv" class="result-box hidden">
+                                <h4>Est. Fare: <span class="fare-amount"
+                                        style="font-size: 2rem; color: var(--primary-color);">₹0</span></h4>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-primary full-width mt-1" onclick="selectVehicle('SUV')">Book SUV</a>
+                    </div>
+                </div>
+
+                <!-- Tempo Traveler Card -->
+                <div class="fleet-card glass-card">
+                    <div class="fleet-img-wrapper">
+                        <img src="tempo.jpg" alt="Tempo Traveler Van">
+                        <div class="fleet-badge">From ₹24 / km</div>
+                    </div>
+                    <div class="fleet-info">
+                        <h3>Tempo Traveler</h3>
+                        <p><i class="fas fa-users"></i> 12-14 Seats &nbsp;|&nbsp; <i class="fas fa-snowflake"></i> AC
+                        </p>
+
+                        <div class="calc-form">
+                            <div class="input-group">
+                                <label>Seat Capacity</label>
+                                <select id="seats-tempo" class="custom-select" style="margin-bottom: 1rem;">
+                                    <option value="24">12 Seater (₹24/km)</option>
+                                    <option value="25">14 Seater (₹25/km)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Distance (km)</label>
+                                <input type="number" id="distance-tempo" placeholder="Enter Kilometer" min="1">
+                            </div>
+                            <button class="btn-secondary btn-small calc-btn" data-vehicle="tempo">Calculate
+                                Fare</button>
+                            <div id="result-tempo" class="result-box hidden">
+                                <h4>Est. Fare: <span class="fare-amount"
+                                        style="font-size: 2rem; color: var(--primary-color);">₹0</span></h4>
+                            </div>
+                        </div>
+                        <a href="#book" class="btn-primary full-width mt-1"
+                            onclick="selectVehicle('Tempo Traveler')">Book Tempo</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="book" class="booking-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Ready to Book?</h2>
+                <p>Reserve your car now. Pay directly to the driver after your trip.</p>
+            </div>
+
+            <div class="booking-container">
+                <form id="bookingForm" class="glass-card form-grid">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Name">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="Mobile Number">
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="vehicle">Selected Vehicle</label>
+                        <select id="vehicle" class="custom-select">
+                            <option value="Select a Vehicle">-- Select a Vehicle --</option>
+                            <option value="Sedan">Premium Sedan</option>
+                            <option value="SUV">Luxury SUV</option>
+                            <option value="Tempo Traveler">Tempo Traveler</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="pickup">Pickup Address</label>
+                        <div class="map-input-group">
+                            <input type="text" id="pickup" required placeholder="Airport Terminal 2, Street Address...">
+                            <button type="button" class="btn-secondary map-btn" data-target="pickup">
+                                <i class="fas fa-map-marker-alt"></i> Select Map
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="dropoff">Drop-off Location</label>
+                        <div class="map-input-group">
+                            <input type="text" id="dropoff" required placeholder="Downtown Hotel, City Center...">
+                            <button type="button" class="btn-secondary map-btn" data-target="dropoff">
+                                <i class="fas fa-map-marker-alt"></i> Select Map
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date">Pickup Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Pickup Time (AM/PM)</label>
+                        <div style="display: flex; gap: 5px;">
+                            <select id="timeHours" class="custom-select" required
+                                style="padding-right: 0.5rem; background-position: right 0.2rem center;">
+                                <option value="">HH</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select id="timeMinutes" class="custom-select" required
+                                style="padding-right: 0.5rem; background-position: right 0.2rem center;">
+                                <option value="">MM</option>
+                                <option value="00">00</option>
+                                <option value="05">05</option>
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                                <option value="35">35</option>
+                                <option value="40">40</option>
+                                <option value="45">45</option>
+                                <option value="50">50</option>
+                                <option value="55">55</option>
+                            </select>
+                            <select id="timeAMPM" class="custom-select" required
+                                style="padding-right: 0.5rem; background-position: right 0.2rem center;">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary full-width submit-btn">
+                        Send Booking Request <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment" class="payment-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Secure <span>Payment</span></h2>
+                <p>Direct transfer made easy. Scan the GPay QR code to pay after your ride.</p>
+            </div>
+            <div class="payment-container glass-card">
+                <div class="qr-code-wrapper">
+                    <!-- Placeholder for the GPay Scanner Image. Please rename your file to qrcode.png or update the src here -->
+                    <div class="qr-header">
+                        <img src="https://ui-avatars.com/api/?name=Seven+Hills&background=random" alt="Profile"
+                            class="qr-profile-pic">
+                        <h3>seven hills</h3>
+                    </div>
+                    <img src="gpay.jpeg" alt="Scan to pay with any UPI app" class="qr-image"
+                        onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg'">
+                    <div class="scanner-text">
+                        <p class="upi-id">UPI ID: sevenhills544@okicici</p>
+                        <p class="upi-id">Gpay Number: 6369637671</p>
+                        <p class="scan-instructions">Scan to pay with any UPI app</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="logo.jpg" alt="Time Travels Logo" class="footer-logo-img">
+                <h2>TIME TRAVELS<span> PONDICHERRY</span></h2>
+                <p>Your premium personal driver service.</p>
+            </div>
+            <div class="footer-contact">
+                <p><i class="fas fa-phone"></i><a href="tel:6369637671">6369637671</a></p>
+                <p><i class="fas fa-phone"></i><a href="tel:7810005806">7810005806</a></p>
+                <p><i class="fas fa-phone"></i><a href="tel:9943574257">9943574257</a></p>
+                <p><i class="fas fa-phone"></i><a href="tel:9751056659">9751056659</a></p>
+                <p><i class="fas fa-envelope"></i> timetravelspondicherry@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> No. 23, Kamaraj Salai. Illango Nagar. (Balaji Theater
+                    Opposite). Pondicherry-605001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Time Travels Pondicherry. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Map Modal -->
+    <div id="mapModal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <h3 id="mapModalTitle" style="margin-bottom: 1rem;">Select Location</h3>
+
+            <!-- Map Search -->
+            <div class="map-search-container">
+                <input type="text" id="mapSearchInput" placeholder="Search for a location..." class="map-search-input">
+                <button type="button" id="mapSearchBtn" class="btn-secondary map-search-btn">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <div id="mapContainer" style="height: 400px; width: 100%; border-radius: 8px; margin-bottom: 1rem;"></div>
+            <div style="text-align: center;">
+                <p id="selectedAddress" style="margin-bottom: 1rem; color: var(--text-main); font-weight: 500;">Click on
+                    the map to place a marker</p>
+                <button type="button" id="confirmLocationBtn" class="btn-primary" disabled>Confirm Location</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action WhatsApp Button -->
+    <a href="https://wa.me/916369637671?text=Hi,%20I%20am%20looking%20for%20a%20ride!" target="_blank"
+        class="floating-wa">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

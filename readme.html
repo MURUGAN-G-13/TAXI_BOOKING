@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Travels Pondicherry | README</title>
+    <meta name="description" content="Time Travels Pondicherry - Premium City Transfer Service Documentation">
+    <link rel="icon" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --bg-darker: #08090b;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --primary-color: #d4af37;
+            --primary-hover: #f1c40f;
+            --accent-color: #00d2ff;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a5;
+            --success: #2ecc71;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(15, 17, 21, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        .readme-header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 210, 255, 0.1) 100%);
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 1px solid var(--card-border);
+        }
+
+        .readme-header h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .readme-header p {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-color);
+        }
+
+        .section h3 {
+            color: var(--accent-color);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: var(--bg-darker);
+            border: 1px solid var(--card-border);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .code-block code {
+            color: var(--accent-color);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* List Styling */
+        .section ul, .section ol {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        .section li {
+            margin: 0.5rem 0;
+            color: var(--text-main);
+        }
+
+        .section li strong {
+            color: var(--primary-color);
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-badge {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-box {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .contact-box i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin: 0.5rem 0;
+        }
+
+        .contact-box a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .readme-header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-car"></i>
+                TIME TRAVELS
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container">
+        <div class="readme-header">
+            <h1>Time Travels Pondicherry</h1>
+            <p>Premium City Transfer Service - Documentation & Information</p>
+        </div>
+
+        <!-- About Section -->
+        <section class="section">
+            <h2><i class="fas fa-info-circle"></i> About Time Travels</h2>
+            <p>Welcome to <strong>Time Travels Pondicherry</strong>, your premier choice for premium, reliable, and comfortable city transfer services. We pride ourselves on offering professional drivers, immaculate vehicles, and instant availability to ensure your travel experience is nothing short of exceptional.</p>
+            <p style="margin-top: 1rem;">Our mission is to provide seamless, safe, and luxurious transportation solutions for residents and visitors of Pondicherry.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section">
+            <h2><i class="fas fa-star"></i> Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Round-the-clock customer support for your peace of mind</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-route"></i>
+                    <h4>Real-Time Tracking</h4>
+                    <p>Track your ride in real-time with integrated map</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Professional Drivers</h4>
+                    <p>Verified, experienced, and courteous drivers</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-car"></i>
+                    <h4>Premium Fleet</h4>
+                    <p>Well-maintained, clean, and comfortable vehicles</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safe & Secure</h4>
+                    <p>Your safety is our top priority with verified rides</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wallet"></i>
+                    <h4>Flexible Payment</h4>
+                    <p>Multiple payment options for your convenience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section">
+            <h2><i class="fas fa-cog"></i> How It Works</h2>
+            <ol>
+                <li><strong>Enter Your Location</strong> - Set your pickup and drop-off locations on our user-friendly interface</li>
+                <li><strong>Select Vehicle</strong> - Choose from our range of premium vehicles based on your needs</li>
+                <li><strong>Confirm Booking</strong> - Review the fare estimate and confirm your booking</li>
+                <li><strong>Get Driver Details</strong> - Receive information about your assigned driver</li>
+                <li><strong>Track Your Ride</strong> - Monitor your ride in real-time with our integrated map</li>
+                <li><strong>Enjoy Your Journey</strong> - Sit back and enjoy a premium travel experience</li>
+            </ol>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section">
+            <h2><i class="fas fa-code"></i> Technology Stack</h2>
+            <p>Our platform is built with modern, reliable technologies:</p>
+            <div class="tech-stack">
+                <span class="tech-badge"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="tech-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tech-badge"><i class="fas fa-map"></i> Leaflet Maps</span>
+                <span class="tech-badge"><i class="fas fa-font-awesome"></i> Font Awesome Icons</span>
+                <span class="tech-badge"><i class="fab fa-google"></i> Google Fonts</span>
+            </div>
+        </section>
+
+        <!-- File Structure -->
+        <section class="section">
+            <h2><i class="fas fa-folder"></i> Project Structure</h2>
+            <div class="code-block">
+                <code>Taxi_Booking/<br/>
+├── index.html          # Main landing page<br/>
+├── style.css           # Styling and responsive design<br/>
+├── main.js             # Core functionality and interactions<br/>
+├── readme.html         # This documentation page<br/>
+├── README.md           # Markdown documentation<br/>
+└── logo.jpg            # Brand logo
+                </code>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="section">
+            <h2><i class="fas fa-rocket"></i> Getting Started</h2>
+            <h3>To use Time Travels Pondicherry:</h3>
+            <ol>
+                <li>Open <strong>index.html</strong> in your web browser</li>
+                <li>Navigate through the sections using the top menu</li>
+                <li>Use the booking form to request a ride</li>
+                <li>Track your ride on the interactive map</li>
+                <li>Complete your payment securely</li>
+            </ol>
+            <a href="index.html" class="btn"><i class="fas fa-arrow-right"></i> Start Booking</a>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section">
+            <h2><i class="fas fa-concierge-bell"></i> Our Services</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-city"></i>
+                    <h4>City Tours</h4>
+                    <p>Explore Pondicherry with our knowledgeable drivers</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <h4>Airport Transfer</h4>
+                    <p>Reliable airport pickup and drop-off services</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Corporate Travel</h4>
+                    <p>Professional transportation for business needs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h4>Event Transport</h4>
+                    <p>Luxury rides for weddings and special occasions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Support -->
+        <section class="section">
+            <h2><i class="fas fa-phone"></i> Contact & Support</h2>
+            <p>Have questions or need assistance? We're here to help!</p>
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p>Call us anytime</p>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+                <div class="contact-box">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>Drop us a message</p>
+                    <a href="mailto:info@timetravels.com">info@timetravels.com</a>
+                </div>
+                <div class="contact-box">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <p>Chat with us directly</p>
+                    <a href="https://wa.me/919876543210">Message Us</a>
+                </div>
+                <div class="contact-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Location</h4>
+                    <p>Pondicherry</p>
+                    <p style="font-size: 0.85rem;">India</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept credit cards, debit cards, digital wallets, and cash payments.</p>
+
+            <h3>How can I cancel my booking?</h3>
+            <p>You can cancel your booking anytime through the app. Cancellation charges may apply based on the timing.</p>
+
+            <h3>Are your drivers background-checked?</h3>
+            <p>Yes, all our drivers undergo rigorous background checks and verification for your safety.</p>
+
+            <h3>Do you provide corporate accounts?</h3>
+            <p>Yes! We offer special corporate packages with invoicing and expense management features.</p>
+        </section>
+
+        <!-- Privacy & Terms -->
+        <section class="section">
+            <h2><i class="fas fa-lock"></i> Privacy & Security</h2>
+            <p>Your privacy and data security are paramount to us. We follow industry-standard security protocols to protect your personal information.</p>
+            <ul>
+                <li>Secure payment processing with encryption</li>
+                <li>No sharing of personal data with third parties without consent</li>
+                <li>Regular security audits and updates</li>
+                <li>Transparent data usage policies</li>
+            </ul>
+        </section>
+
+        <!-- Version Info -->
+        <section class="section">
+            <h2><i class="fas fa-info"></i> Version Information</h2>
+            <p><strong>Application:</strong> Time Travels Pondicherry v1.0</p>
+            <p><strong>Last Updated:</strong> June 2026</p>
+            <p><strong>Status:</strong> <span style="color: var(--success);">Active & Operational</span></p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>Time Travels Pondicherry</strong>. All rights reserved.</p>
+        <p>Premium City Transfer Service | Serving Pondicherry with Excellence</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Designed for Premium Travel Experience</p>
+    </footer>
+</body>
+
+</html>
